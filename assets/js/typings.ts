@@ -3,4 +3,4 @@ declare const __APP__: {
   VERSION: string;
 };
 
-// TODO: Resolve the error of "--isolatedModules".
+export default __APP__;

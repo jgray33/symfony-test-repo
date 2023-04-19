@@ -47,4 +47,21 @@ class ProductController extends AbstractController
 
         return $this->json($jsonData, Response::HTTP_OK);
     }
+
+    #[Route('/api/product/', name: 'api_add_product', methods: ['POST'])]
+    public function addProduct(): Response
+    {
+        $entityManager = $doctrine->getManager();
+
+        $product = new Product();
+        $product->setName($request->request->get('name'));
+        $product->setDescription($request->request->get('description'));
+        $product->setPrice($request->request->get('price'));
+        $product->setImage($request->request->get('image'));
+
+        entityManager->persist($product);
+        $entityManager->flush();
+
+        return $this->json('New product created');
+    }
 }

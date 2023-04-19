@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AuthContext from "../store/AuthContext";
+import __APP__ from "../typings"
 
 const Header = () => {
     const Auth = useContext(AuthContext);

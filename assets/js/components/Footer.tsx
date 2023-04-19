@@ -1,4 +1,5 @@
 import React from "react";
+import __APP__ from "../typings"
 
 const Footer = () => {
 	return (
